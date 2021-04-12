@@ -9,7 +9,7 @@ resource "checkly_check_group" "test-group1" {
   locations = [
     "eu-west-1",
   ]
-
+  concurrency = 3
   double_check              = true
   use_global_alert_settings = true
 }
