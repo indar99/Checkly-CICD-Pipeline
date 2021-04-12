@@ -1,3 +1,21 @@
+resource "checkly_check_group" "test-group1" {
+  name      = "Terraform-Testing"
+  activated = true
+  muted     = false
+  tags = [
+    "github-cicd-pipeline"
+  ]
+
+  locations = [
+    "eu-west-1",
+  ]
+
+  double_check              = true
+  use_global_alert_settings = true
+}
+
+
+
 resource "checkly_check" "example-api-check" {
   name                      = "Example API check"
   type                      = "API"
@@ -5,6 +23,8 @@ resource "checkly_check" "example-api-check" {
   frequency                 = 1
   double_check              = true
   use_global_alert_settings = true
+  group_id = "${checkly_check_group.test-group1.id}"
+  group_order = 1
 
   locations = [
     "us-west-1",
