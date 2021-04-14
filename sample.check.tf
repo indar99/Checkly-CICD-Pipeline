@@ -17,7 +17,7 @@ resource "checkly_check_group" "test-group1" {
 
 
 resource "checkly_check" "example-api-check" {
-  name                      = "Example API check"
+  name                      = "Test12"
   type                      = "API"
   activated                 = true
   frequency                 = 1
