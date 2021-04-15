@@ -12,7 +12,7 @@ terraform {
     organization = "indar99"
 
     workspaces {
-      name = "Checkly_CICD"
+      name = "Test"
     }
   }
 }
